@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Карта</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIl9stKsf1h6Xr6PBUHiiZFB5Cin5SlZs&map_ids=8e20b7b078acc96a&callback=initMap" defer></script>
+        <script>
+            function initMap() {
+                const initial = { lat: 53.897180853607644, lng: 27.529112070733397 };
+                const map = new google.maps.Map(document.querySelector(".map"), {
+                    zoom: 12,
+                    center: initial,
+                    mapId: "8e20b7b078acc96a",
+                });
+                locations.map((location) => {
+                    const marker = new google.maps.Marker({
+                        position: location.coordinates,
+                        map: map,
+                    });
+                    const place = new google.maps.InfoWindow({
+                        content: location.place,
+                    })
+                    marker.addListener("click", () => {
+                        place.open(map, marker);
+                    });
+                    return (
+                        marker, place
+                    )
+
+                });
+            }
+            const locations = [
+                {
+                    coordinates: {lat: 53.897180853607644, lng: 27.529112070733397},
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь я преподаю на курсах</p><p style='font-weight: 600;'>IT-SHATLE</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.894464438919954, lng: 27.530586658895505 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Moe последнее место работы</p><p style='font-weight: 600;'>ARTEZIO</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.87294635768635, lng: 27.55699860420665 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь я живу с 2015 года</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.877622152670234, lng: 27.535177973215205 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Сюда я хожу в тренажерку</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.90554230373621, lng: 27.502554896538552 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Moe текущее место работы</p><p style='font-weight: 600;'>WEB-VIKI</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.87524239469857, lng: 27.61558064415851 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь я жил когда приехал<br> в Минск в 1985 году</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.84369862302535, lng: 27.646500380470076 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь я жил когда <br> женился в 2007 году</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.916589313886504, lng: 27.579525555466002 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь был TUT.BY</p><p>когда я там работал</p><p>Незабываемое время!!!</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.92299853565928, lng: 27.629370567099613 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь я работал когда был СССР</p><p style='font-weight: 600;'>Республиканское телевидение</p><p>Самые яркие впечатления!!!</p></div>",
+                },
+                {
+                    coordinates: { lat: 53.86587739498811, lng: 27.568811143240545 },
+                    place: "<div style='padding: 6px 6px 0 6px; text-align: center;'><p>Здесь работает моя жена</p><p style='font-weight: 600;'>Поликлиника № 11</p></div>",
+                },
+            ];
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="wrapper">
+                <a href="main.html" class="logo"><img src="img/logo.svg" alt="логотип IT_SHATLE"></a>
+                <nav>
+                    <ul>
+                        <li><a href="main.html">Главная</a></li>
+                        <li><a href="clients.html">Клиенты</a></li>
+                        <li class="current"><a href="map.html">Карта</a></li>
+                    </ul>
+                </nav>
+                <a href="index.html" class="log-out">Выйти</a>
+            </div>
+        </header>
+        <div class="map"></div>
+    </body>
+</html>

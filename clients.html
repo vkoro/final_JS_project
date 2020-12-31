@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Клиенты</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/moment.min.js" defer></script>
+    <script src="js/clients.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <a href="main.html" class="logo"><img src="img/logo.svg" alt="логотип IT_SHATLE"></a>
+            <nav>
+                <ul>
+                    <li><a href="main.html">Главная</a></li>
+                    <li class="current"><a href="clients.html">Клиенты</a></li>
+                    <li><a href="map.html">Карта</a></li>
+                </ul>
+            </nav>
+            <a href="index.html" class="log-out">Выйти</a>
+        </div>
+    </header>
+    <main class="wrapper">
+        <table class="statistics">
+            <tr>
+                <td></td>
+                <td>Кол-во</td>
+                <td>Наибольший баланс</td>
+            </tr>
+            <tr>
+                <td>Мужчины</td>
+                <td><span class="male-account"></span></td>
+                <td><span class="male-maxbalance"></span></td>
+            </tr>
+            <tr>
+                <td>Женщины</td>
+                <td><span class="female-account"></span></td>
+                <td><span class="female-maxbalance"></span></td>
+            </tr>
+        </table>
+        <table class="table-header">
+            <tr>
+                <th>Имя</th>
+                <th class="company">Компания</th>
+                <th class="email">Email</th>
+                <th class="phone">Телефон</th>
+                <th class="balance">Баланс</th>
+                <th class="reg-date">Дата регистр.</th>
+                <th class="remove-tr"></th>
+            </tr>
+        </table>
+        <section class="clients-table">
+            <table class="clients"></table>
+        </section>
+        <section class="confirm-remove invisible">
+            <p>Данные успешно удалены</p>
+            <span class="close"></span>
+        </section>
+        <button class="top-btn">&uarr;</button>
+    </main>
+</body>
+</html>
